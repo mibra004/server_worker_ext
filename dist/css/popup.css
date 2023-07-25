@@ -1,5 +1,5 @@
 body {
-  width: 256px;
+  width: 450px;
   margin: 12px 24px 16px;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   color: #7f8c8d;
@@ -90,6 +90,21 @@ button.modal_window:active {
 button.modal_window:focus {
   box-shadow: 0 0 0 2px #507192;
 }
+button.open-video {
+  background: #2c3e50;
+  color: #fff;
+  line-height: 12px;
+  width: auto;
+  margin-top: 1px;
+  margin-right: 2px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+button.video-popup {
+  display: block;
+  margin: 0 auto;
+}
 
 .server {
   margin: 16px 0 0;
@@ -130,4 +145,38 @@ button.modal_window:focus {
   font-size: 14px;
   font-weight: 500;
   margin: 0 0 8px;
+}
+
+.video-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+}
+.video-popup .close-video {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  padding: 8px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+.video-popup .close-video:hover {
+  background-color: #d32f2f;
 }

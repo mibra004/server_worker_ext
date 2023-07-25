@@ -16,7 +16,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       isOpen: false,
-      serverWorkerText: ''
+      serverWorkerText: '',
+      isVideoPopupOpen: false
     };
   },
   created: function created() {
@@ -38,6 +39,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     closeModal: function closeModal() {
       this.isOpen = false;
+    },
+    openVideoPopup: function openVideoPopup() {
+      this.isVideoPopupOpen = true;
+    },
+    closeVideoPopup: function closeVideoPopup() {
+      this.isVideoPopupOpen = false;
     }
   }
 });
@@ -72,7 +79,30 @@ var render = function render() {
     on: {
       click: _vm.checkServerWorker
     }
-  }, [_vm._v("Check Server Worker")])]), _vm._v(" "), _vm.isOpen ? _c("div", {
+  }, [_vm._v("Check Server Worker")])]), _vm._v(" "), _c("button", {
+    staticClass: "open-video",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.openVideoPopup
+    }
+  }, [_vm._v("Tutorial")]), _vm._v(" "), _vm.isVideoPopupOpen ? _c("div", {
+    staticClass: "video-popup"
+  }, [_c("iframe", {
+    attrs: {
+      width: "560",
+      height: "315",
+      src: "https://www.youtube.com/embed/A6MHtKkA0CA",
+      frameborder: "0",
+      allowfullscreen: ""
+    }
+  }), _vm._v(" "), _c("button", {
+    staticClass: "close-video",
+    on: {
+      click: _vm.closeVideoPopup
+    }
+  }, [_vm._v("Close")])]) : _vm._e(), _vm._v(" "), _vm.isOpen ? _c("div", {
     staticClass: "modal"
   }, [_c("div", {
     staticClass: "modal-content"

@@ -9,7 +9,12 @@
       <p>Check for Server Worker for this website:</p>
       <button type="button" class="check_server" @click="checkServerWorker">Check Server Worker</button>
     </div>
-
+    <button type="button" class="open-video" @click="openVideoPopup" >Tutorial</button>
+    <div class="video-popup" v-if="isVideoPopupOpen">
+      <!-- Replace the placeholder with your desired tutorial video iframe -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/A6MHtKkA0CA" frameborder="0" allowfullscreen></iframe>
+      <button class="close-video" @click="closeVideoPopup">Close</button>
+    </div>
     <div class="modal" v-if="isOpen">
       <div class="modal-content">
         <h2>Modal Window</h2>
@@ -24,7 +29,8 @@ export default {
   data() {
     return {
       isOpen: false,
-      serverWorkerText: ''
+      serverWorkerText: '',
+      isVideoPopupOpen: false
     };
   },
   created() {
@@ -81,6 +87,12 @@ export default {
 
     closeModal() {
       this.isOpen = false;
+    },
+    openVideoPopup() {
+      this.isVideoPopupOpen = true;
+    },
+    closeVideoPopup() {
+      this.isVideoPopupOpen = false;
     }
   }
 };
